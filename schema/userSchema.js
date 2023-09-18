@@ -14,12 +14,12 @@ const userSchema = new Schema({
     trim: true,
   },
   password: {
-    type: Number,
+    type: String,
     required: true,
     trim: true,
   },
   confPassword: {
-    type: Number,
+    type: String,
     required: true,
     trim: true,
   },
