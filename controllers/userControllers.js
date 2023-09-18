@@ -25,10 +25,13 @@ exports.findUser = async function (req, res) {
       email: req.body.email,
     });
     if (user !== null && user.password === req.body.password) {
-      res.send(JSON.stringify({ success: true }));
+      res.send(
+        JSON.stringify({ user: user.name, email: user.email, success: true })
+      );
     } else res.send(JSON.stringify({ success: false }));
   } catch (err) {
     console.log(err);
   } finally {
+    await mongoose.disconnect();
   }
 };
