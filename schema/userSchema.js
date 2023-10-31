@@ -23,6 +23,10 @@ const userSchema = new Schema({
     required: true,
     trim: true,
   },
+  purchases: {
+    type: Array,
+    trim: true,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
